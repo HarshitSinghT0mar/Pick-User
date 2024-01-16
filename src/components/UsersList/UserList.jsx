@@ -1,8 +1,8 @@
 import React  from 'react'
-import { usersList } from './usersList'
+import { useUserData } from '../../contexts/UserContext'
 
-const UserList = ({setSelectedUsers,selectedUsers}) => {
-
+const UserList = () => {
+const {setSelectedUsers,selectedUsers,usersList}=useUserData()
   const onUserSelect=(user)=>{
 
     let userExist=selectedUsers.some(item=>item.id===user.id)
