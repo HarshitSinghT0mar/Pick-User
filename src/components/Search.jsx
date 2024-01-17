@@ -58,10 +58,12 @@ const Search = () => {
   };
   return (
     <div className="border-b-[2px] flex-wrap border-solid border-[#000] flex items-end gap-2 p-1 h-auto w-[600px]">
+    <div className="grow max-w-max">
       <UserChip highLightedUser={highLightedUser} />
+      </div>
 
       <input
-        className="outline-none max-w-full h-4"
+        className="outline-none max-w-full shrink"
         placeholder="add new user"
         onChange={searchUser}
         onFocus={handleShowList}
