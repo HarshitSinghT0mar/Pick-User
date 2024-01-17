@@ -3,24 +3,30 @@ import { useUserData } from "../../contexts/UserContext";
 import { useSearch } from "../../contexts/SearchContext";
 
 const UserList = () => {
-  const { setSelectedUsers, selectedUsers, usersList } = useUserData();
+  const { setSelectedUsers, selectedUsers, usersList,setUsersList } = useUserData();
   const {setQuery}=useSearch()
 
   const onUserSelect = (user) => {
-    let userExist = selectedUsers.some((item) => item.id === user.id);
-    if (userExist) return;
+    // let userExist = selectedUsers.some((item) => item.id === user.id);  //return if user is already selected
+    // if (userExist) return;
 
     setSelectedUsers((prev) => [...prev, user]);
+
+    let restListUsers=usersList.filter((list)=>{
+        return user.id!==list.id
+    })                                             
+
+    setUsersList(restListUsers)           //delete user from list upon selecting
     setQuery('')
   };
 
   return (
     <div className="flex flex-col gap-1 max-w-max p-3 border-[1px] border-solid border-[#ECECEC] overflow-y-auto max-h-[300px]">
-      {usersList?.map((user) => {
+      {usersList.length!==0 ? usersList?.map((user,index) => {
         return (
-          <ListItem user={user} key={user.id} onUserSelect={onUserSelect} />
+          <ListItem user={user} key={index} onUserSelect={onUserSelect} />
         );
-      })}
+      }): <p>No User</p>}
     </div>
   );
 };

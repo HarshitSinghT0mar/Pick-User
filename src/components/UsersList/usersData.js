@@ -55,4 +55,18 @@ export const usersData = [
     email: "rachel.verma@gmail.com",
     name: "Rachel Verma",
   },
+  {
+    id: 9,
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    email: "alex.mathur@gmail.com",
+    name: "Alex Mathur",
+  },
+  {
+    id: 10,
+    image:
+      "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    email: "bittu.smith@gmail.com",
+    name: "Bittu Smith",
+  },
 ];
